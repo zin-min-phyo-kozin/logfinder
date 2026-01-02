@@ -1,0 +1,94 @@
+# cPanel-Specific Paths and Log Locations
+
+## System Logs
+/var/log/messages - Main system log file
+/var/log/secure - Authentication and authorization logs
+/var/log/cron - Cron job execution logs
+/var/log/maillog - Mail server logs (Exim/Postfix)
+/var/log/httpd/access_log - Apache access logs
+/var/log/httpd/error_log - Apache error logs
+/var/log/httpd/suexec_log - Apache suexec logs
+
+## cPanel Specific Logs
+/usr/local/cpanel/logs/cpanel.log - Main cPanel daemon log
+/usr/local/cpanel/logs/error_log - cPanel error log
+/usr/local/cpanel/logs/access_log - cPanel access log
+/usr/local/cpanel/logs/license_log - License verification logs
+/usr/local/cpanel/logs/upcp.log - Update logs
+/usr/local/cpanel/logs/transfer.log - Account transfer logs
+/usr/local/cpanel/logs/cpsrvd.log - cPanel service daemon logs
+
+## WHM Logs
+/usr/local/cpanel/logs/whm_error_log - WHM error logs
+/usr/local/cpanel/logs/whm_access_log - WHM access logs
+
+## Mail Logs
+/var/log/exim_mainlog - Exim main transaction log
+/var/log/exim_paniclog - Exim panic log
+/var/log/exim_rejectlog - Exim rejected messages log
+/var/log/dovecot.log - Dovecot IMAP/POP3 server logs
+/home/*/mail/*/cur/ - User mailbox directories
+
+## FTP/SFTP Logs
+/var/log/proftpd/ftp.log - ProFTPD logs
+/var/log/secure - SSH/SFTP authentication logs
+
+## DNS Logs
+/var/log/named.log - BIND DNS server logs
+/var/named/data/named.run - Alternative DNS log location
+
+## MySQL/Database Logs
+/var/log/mysql/error.log - MySQL error log
+/var/log/mysql/query.log - MySQL query log (if enabled)
+/var/lib/mysql/hostname.err - Host-specific MySQL error log
+
+## PHP Logs
+/usr/local/apache/logs/php_error_log - PHP error logs
+/usr/local/php*/lib/php.ini - PHP configuration logs
+/var/log/php.log - Alternative PHP error log
+
+## AutoSSL/SSL Logs
+/usr/local/cpanel/logs/autossl_status.log - AutoSSL certificate status
+/usr/local/cpanel/logs/ssl_install.log - SSL installation logs
+
+## cPanel Plugin Logs
+/usr/local/cpanel/plugins/*/logs/ - Individual plugin log directories
+
+## Backup Logs
+/usr/local/cpanel/logs/backup.log - Full backup logs
+/usr/local/cpanel/logs/backup/ - Backup operation details
+
+## Service Logs
+/var/log/chkservd.log - Service monitoring logs
+/usr/local/cpanel/logs/chkservd.log - cPanel service check logs
+
+## Firewall/Security Logs
+/var/log/firewalld - Firewalld logs
+/var/log/audit/audit.log - SELinux audit logs
+/var/log/fail2ban.log - Fail2ban intrusion detection logs
+
+## Web Hosting Account Logs
+/home/*/public_html/ - User account web root
+/home/*/logs/ - User-specific log directory
+/home/*/access-logs/ - User access logs
+/home/*/error-logs/ - User error logs
+
+## System Performance Logs
+/var/log/sysstat/ - System activity data
+/proc/meminfo - Memory information
+/proc/cpuinfo - CPU information
+
+## Update and Installation Logs
+/var/log/yum.log - Yum package manager logs
+/var/log/apt/history.log - APT package manager logs (Debian-based)
+/usr/local/cpanel/logs/update_log - cPanel update history
+
+## Resource Usage and Monitoring
+/var/log/sa/ - System Activity Reporter data
+/var/log/sar - sysstat historical data
+
+## Notes
+- Paths may vary slightly depending on cPanel version and system configuration
+- Some logs require root or elevated privileges to read
+- Log rotation policies are typically configured in /etc/logrotate.d/
+- Check /usr/local/cpanel/cpanel.config for custom cPanel configuration settings
