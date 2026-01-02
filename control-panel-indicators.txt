@@ -1,0 +1,256 @@
+CONTROL PANEL IDENTIFICATION PATTERNS AND INDICATORS
+=====================================================
+
+Last Updated: 2026-01-02 09:22:29 UTC
+
+This document contains patterns and indicators used to identify control panel access,
+authentication, and administrative activities in system logs.
+
+---
+
+1. CONTROL PANEL ACCESS PATTERNS
+================================
+
+Common URLs and Endpoints:
+- /admin/
+- /admin-panel/
+- /cpanel/
+- /control-panel/
+- /dashboard/admin/
+- /administrator/
+- /cp/
+- /backend/
+- /webadmin/
+- /adminpanel/
+- /controlpanel/
+- /management/
+- /management-console/
+
+HTTP Methods:
+- POST (form submissions, file uploads)
+- GET (access logs, status checks)
+- DELETE (file deletions, account removal)
+- PUT (configuration updates)
+
+---
+
+2. AUTHENTICATION INDICATORS
+=============================
+
+Login Attempts:
+- "Login attempt"
+- "Authentication failed"
+- "Invalid credentials"
+- "Unauthorized access"
+- "Access denied"
+- "Permission denied"
+- "Forbidden"
+
+Successful Authentication:
+- "Login successful"
+- "Session established"
+- "User authenticated"
+- "Authentication success"
+- "Session started"
+
+Session Management:
+- "Session ID"
+- "PHPSESSID"
+- "Session timeout"
+- "Session expired"
+- "_SESSION"
+- "Cookie set"
+
+---
+
+3. ADMINISTRATIVE ACTIONS
+==========================
+
+User Management:
+- "User created"
+- "User deleted"
+- "User modified"
+- "Password changed"
+- "Password reset"
+- "User account"
+- "Group assigned"
+- "Role assigned"
+
+File Operations:
+- "File uploaded"
+- "File deleted"
+- "File modified"
+- "File renamed"
+- "Directory created"
+- "Directory deleted"
+
+System Configuration:
+- "Configuration updated"
+- "Setting changed"
+- "Config modified"
+- "Parameter updated"
+- "System settings"
+
+Database Operations:
+- "Database query"
+- "Database modified"
+- "Database backup"
+- "Table created"
+- "Table dropped"
+- "Record inserted"
+- "Record deleted"
+
+---
+
+4. SECURITY INDICATORS
+=======================
+
+Failed Access:
+- HTTP Status 401 (Unauthorized)
+- HTTP Status 403 (Forbidden)
+- "Access denied"
+- "Permission required"
+- "Must be logged in"
+
+Suspicious Activities:
+- Multiple failed login attempts
+- Rapid sequential requests
+- SQL injection attempts
+- Path traversal attempts
+- Command injection attempts
+- XSS attempts
+- "Suspicious activity"
+- "Threat detected"
+
+Security Changes:
+- "Security policy updated"
+- "Firewall rule"
+- "SSL certificate"
+- "Encryption enabled"
+- "Two-factor authentication"
+- "2FA"
+- "MFA"
+
+---
+
+5. LOG ENTRY PATTERNS
+=====================
+
+Typical Admin Log Format:
+[TIMESTAMP] [LEVEL] [MODULE] [USER] [ACTION] [RESULT]
+
+Example Entries:
+2026-01-02 09:15:42 INFO ADMIN user@domain.com login success 192.168.1.100
+2026-01-02 09:16:10 WARNING ADMIN admin password_change success user123
+2026-01-02 09:17:25 ERROR ADMIN hacker login failed 203.0.113.45
+2026-01-02 09:18:55 INFO FILE_MGR admin file_upload success /public/document.pdf
+
+---
+
+6. CONTROL PANEL TOOLS AND INTERFACES
+======================================
+
+Common Control Panel Software:
+- cPanel
+- Plesk
+- WHM (Web Host Manager)
+- DirectAdmin
+- Webmin
+- ISPConfig
+- Virtualmin
+- Centova Cast
+- WHMCS
+- Cpanel Pro
+- Hostinger
+- Bluehost Control Panel
+- GoDaddy Control Panel
+
+Associated Log Files:
+- /var/log/cPanel/cPanel.log
+- /var/log/plesk/
+- /var/log/apache2/access.log
+- /var/log/nginx/access.log
+- /var/log/auth.log
+- /var/log/secure
+- /var/log/messages
+- /var/log/httpd/access_log
+
+---
+
+7. IP ADDRESS INDICATORS
+=========================
+
+Suspicious IP Patterns:
+- Multiple rapid login failures
+- Geographic anomalies
+- Datacenter IPs (for consumer services)
+- VPN/Proxy indicators
+- Tor exit nodes
+- Known malicious IPs
+- Non-whitelisted IPs
+
+Safe IP Patterns (likely legitimate):
+- Consistent source IPs
+- Geographic consistency
+- Office/home ISP ranges
+- Company VPN ranges
+
+---
+
+8. TIME-BASED INDICATORS
+=========================
+
+Suspicious Timing:
+- Off-hours access (outside business hours)
+- Late night/early morning access
+- Weekend access for typical office services
+- Rapid sequential access
+- Unusual access patterns
+
+Normal Patterns:
+- Business hours access (8 AM - 6 PM)
+- Consistent daily patterns
+- Regular maintenance windows
+- Scheduled backups
+
+---
+
+9. ERROR AND EXCEPTION CODES
+=============================
+
+Common Admin-Related Error Codes:
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+- 502: Bad Gateway
+- 503: Service Unavailable
+- 550: Permission denied (FTP)
+- 550: Requested action not taken (SMTP)
+
+---
+
+10. EXCLUSION AND WHITELIST PATTERNS
+====================================
+
+Legitimate Non-Admin Access:
+- Automated backups
+- Scheduled cron jobs
+- API calls from authorized services
+- Monitoring tools
+- Health check endpoints
+- Status pages
+- Webhooks from trusted services
+
+Legitimate Admin Patterns:
+- Scheduled maintenance windows
+- Automated system updates
+- System service accounts
+- Monitoring agents
+- Backup agents
+- Log rotation scripts
+
+---
+
+END OF DOCUMENT
+=====================================================
