@@ -1,0 +1,95 @@
+Plesk-Specific Paths and Log Locations
+=====================================
+
+This file documents common Plesk file system paths and log locations for reference.
+
+PLESK INSTALLATION DIRECTORIES
+------------------------------
+- Main Plesk Directory: /opt/psa
+- Apache Configuration: /etc/apache2 or /etc/httpd
+- Nginx Configuration: /etc/nginx
+- MySQL/MariaDB Data: /var/lib/mysql
+- PostgreSQL Data: /var/lib/postgresql
+
+PLESK LOG LOCATIONS
+-------------------
+
+Apache Logs:
+  - Error Log: /var/log/apache2/error.log or /var/log/httpd/error_log
+  - Access Log: /var/log/apache2/access.log or /var/log/httpd/access_log
+  - Domain Error Log: /var/www/vhosts/DOMAIN_NAME/logs/error_log
+  - Domain Access Log: /var/www/vhosts/DOMAIN_NAME/logs/access_log
+
+Nginx Logs:
+  - Error Log: /var/log/nginx/error.log
+  - Access Log: /var/log/nginx/access.log
+  - Domain Error Log: /var/www/vhosts/DOMAIN_NAME/logs/error.log
+  - Domain Access Log: /var/www/vhosts/DOMAIN_NAME/logs/access.log
+
+Plesk Service Logs:
+  - Plesk Panel Log: /var/log/plesk/panel.log
+  - Mail Service Log: /var/log/plesk/postfix.log
+  - DNS Service Log: /var/log/plesk/bind.log
+  - FTP Service Log: /var/log/plesk/proftpd.log
+  - PHP-FPM Log: /var/log/php-fpm/error.log or /var/log/php7.x-fpm.log
+
+MySQL/MariaDB Logs:
+  - Error Log: /var/log/mysql/error.log or /var/log/mariadb/mariadb.log
+  - Query Log: /var/log/mysql/query.log (if enabled)
+  - Slow Query Log: /var/log/mysql/slow.log (if enabled)
+
+System Logs:
+  - System Log: /var/log/syslog or /var/log/messages
+  - Authentication Log: /var/log/auth.log or /var/log/secure
+  - Kernel Log: /var/log/dmesg or dmesg command
+
+Cron Logs:
+  - Cron Log: /var/log/cron or /var/log/syslog (grep for CRON)
+
+Mail Logs:
+  - Mail Log: /var/log/mail.log or /var/log/maillog
+  - Postfix Log: /var/log/mail.log
+  - Dovecot Log: /var/log/dovecot.log
+
+IMPORTANT PATHS FOR DOMAIN MANAGEMENT
+-------------------------------------
+- Domain Root: /var/www/vhosts/DOMAIN_NAME
+- Public HTML: /var/www/vhosts/DOMAIN_NAME/httpdocs
+- HTTPS Root: /var/www/vhosts/DOMAIN_NAME/httpsdocs
+- Domain Logs: /var/www/vhosts/DOMAIN_NAME/logs
+- Domain Statistics: /var/www/vhosts/DOMAIN_NAME/statistics
+- Domain Backups: /var/www/vhosts/DOMAIN_NAME/backups
+
+PLESK CONFIGURATION FILES
+--------------------------
+- Plesk Config: /etc/psa/psa.conf
+- Apache Config: /etc/apache2/apache2.conf or /etc/httpd/conf/httpd.conf
+- Nginx Config: /etc/nginx/nginx.conf
+- PHP Config: /etc/php.ini or /etc/php/7.x/fpm/php.ini
+- MySQL Config: /etc/mysql/my.cnf or /etc/my.cnf
+- Mail Config: /etc/postfix/main.cf
+
+BACKUP LOCATIONS
+----------------
+- Plesk Backups: /var/lib/psa/dumps
+- Domain Backups: /var/www/vhosts/DOMAIN_NAME/backups
+- Scheduled Backups: /var/lib/psa/dumps (or custom location)
+
+TEMPORARY FILES
+---------------
+- Temporary Directory: /tmp or /var/tmp
+- Session Directory: /var/lib/php/sessions (or configured path)
+- Cache Directory: /var/cache/
+
+PERFORMANCE & MONITORING
+------------------------
+- Plesk Statistics: /var/www/vhosts/DOMAIN_NAME/statistics
+- Bandwidth Tracking: /var/log/plesk/stat
+- Resource Monitoring: /var/lib/psa/stat
+
+Notes:
+------
+- Paths may vary depending on OS (CentOS, Ubuntu, Debian) and Plesk version
+- Some directories require root or elevated privileges to access
+- Custom installations may have different path configurations
+- Always check specific domain configurations in Plesk control panel for exact paths
