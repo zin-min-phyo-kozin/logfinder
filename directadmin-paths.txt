@@ -1,0 +1,106 @@
+# DirectAdmin Paths and Log Locations
+# Last Updated: 2026-01-02 09:22:20 UTC
+
+## DirectAdmin Installation Paths
+DA_ROOT=/usr/local/directadmin
+DA_DATA=/usr/local/directadmin/data
+DA_CONF=/usr/local/directadmin/conf
+DA_SCRIPTS=/usr/local/directadmin/scripts
+DA_PLUGINS=/usr/local/directadmin/plugins
+
+## Main Log Files
+DA_LOGS=/var/log/directadmin/
+DIRECTADMIN_LOG=/var/log/directadmin/directadmin.log
+SYSTEM_LOG=/var/log/directadmin/system.log
+ERROR_LOG=/var/log/directadmin/error.log
+SECURITY_LOG=/var/log/directadmin/security.log
+
+## Web Server Logs (Apache/Nginx)
+APACHE_LOGS=/var/log/httpd/
+APACHE_ERROR_LOG=/var/log/httpd/error_log
+APACHE_ACCESS_LOG=/var/log/httpd/access_log
+NGINX_LOGS=/var/log/nginx/
+NGINX_ERROR_LOG=/var/log/nginx/error.log
+NGINX_ACCESS_LOG=/var/log/nginx/access.log
+
+## FTP Logs
+PROFTPD_LOG=/var/log/proftpd.log
+VSFTPD_LOG=/var/log/vsftpd.log
+FTP_LOGS=/var/log/ftp/
+
+## Mail Server Logs
+EXIM_LOG=/var/log/exim_mainlog
+EXIM_PANIC_LOG=/var/log/exim_paniclog
+DOVECOT_LOG=/var/log/dovecot/
+SPAMASSASSIN_LOG=/var/log/spamassassin.log
+
+## Database Logs
+MYSQL_LOG=/var/log/mysql/
+MYSQL_ERROR_LOG=/var/log/mysql/error.log
+MYSQL_GENERAL_LOG=/var/log/mysql/general.log
+POSTGRESQL_LOG=/var/log/postgresql/
+
+## PHP-FPM Logs
+PHPFPM_LOG=/var/log/php-fpm/
+PHPFPM_ERROR_LOG=/var/log/php-fpm/error.log
+
+## SSH/System Logs
+SSH_LOG=/var/log/auth.log
+SECURE_LOG=/var/log/secure
+SUDO_LOG=/var/log/sudo.log
+
+## DirectAdmin-Specific Logs
+DA_COMMAND_LOG=/var/log/directadmin/command.log
+DA_CHROOT_LOG=/var/log/directadmin/chroot.log
+DA_BANDWIDTH_LOG=/var/log/directadmin/bandwidth.log
+DA_PLUGIN_LOG=/usr/local/directadmin/plugins/*/logs/
+
+## User Account Logs
+USER_LOGS=/home/*/logs/
+USER_BANDWIDTH=/home/*/bandwidth/
+USER_BACKUPS=/home/*/backups/
+
+## System Resource Logs
+SYSLOG=/var/log/syslog
+MESSAGES=/var/log/messages
+KERNEL_LOG=/var/log/kernel.log
+DMESG_LOG=/var/log/dmesg
+
+## Cron Logs
+CRON_LOG=/var/log/cron
+CRON_MAIL=/var/mail/root
+
+## DirectAdmin Backup Logs
+BACKUP_LOG=/usr/local/directadmin/logs/backup.log
+RESTORE_LOG=/usr/local/directadmin/logs/restore.log
+
+## SSL Certificate Logs
+SSL_LOG=/var/log/ssl/
+ACME_LOG=/var/log/acme.log
+
+## Firewall/Security Logs
+FIREWALL_LOG=/var/log/firewall.log
+IPTABLES_LOG=/var/log/iptables.log
+FAIL2BAN_LOG=/var/log/fail2ban.log
+
+## Temporary Log Paths
+TEMP_LOGS=/tmp/
+VAR_TMP=/var/tmp/
+
+## Important Configuration Files
+DA_CONFIG=/usr/local/directadmin/conf/directadmin.conf
+DA_USERS_CONFIG=/usr/local/directadmin/data/users/
+DA_DOMAINS_CONFIG=/usr/local/directadmin/data/domains/
+DA_RESELLERS_CONFIG=/usr/local/directadmin/data/resellers/
+
+## Log Rotation Configuration
+LOGROTATE_CONFIG=/etc/logrotate.d/directadmin
+LOGROTATE_STATUS=/var/lib/logrotate/status
+
+## Notes
+# - Replace /home/ with actual user directories as needed
+# - Some paths may vary depending on DirectAdmin installation and OS
+# - Check /etc/logrotate.d/ for log rotation configurations
+# - Most logs require root privileges to access
+# - Use 'tail -f' to follow real-time log updates
+# - Use 'grep' or 'less' to search through log files
